@@ -1,0 +1,66 @@
+<div>
+    <div class="fixHeight">
+    <table mat-table [dataSource]="dataSource">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="sex">
+            <th mat-header-cell *matHeaderCellDef> Sex </th>
+            <td mat-cell *matCellDef="let element"> {{element.sex}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="update">
+            <th mat-header-cell *matHeaderCellDef> Update </th>
+            <td mat-cell *matCellDef="let element"> <span class="updatePointer" (click)="doAction('U',element.id);">UPDATE</span> </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef> Delete </th>
+            <td mat-cell *matCellDef="let element"> <span class="deletePointer" (click)="deleteAction(element.id);">DELETE</span> </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    </div>
+    <mat-toolbar class="mattoolbar">
+        <mat-toolbar-row>
+            <!-- <mat-icon (click)="exportCsv()" title="Export as CSV" class="maticon">save_alt</mat-icon> -->
+            <mat-icon class="maticon" (click)="doAction('A','0')">person_add</mat-icon>
+            <span class="example-spacer"></span>
+            <!-- <mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 20]"></mat-paginator> -->
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                aria-label="Select page of periodic elements">
+            </mat-paginator>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+
+    <div class="updatingAndAdding" *ngIf="showPanel" style="margin-top:20px">
+        <app-updateadd [argActionId]="actionId" (sendDataToParent)="eventFromChild($event)"></app-updateadd>
+    </div>
+
+
+</div>

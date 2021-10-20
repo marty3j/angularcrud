@@ -1,0 +1,59 @@
+.mybody{
+    border:2px solid black;
+    max-width: 85%;
+}
+.row{
+    
+}
+.myheader, .myfooter{
+    background-color: #d31145;
+    color: #ffffff;
+    font-size: 15px;
+}
+.myfooter{
+    min-height: 30px;
+    text-align: center;
+    padding: 10px;
+}
+.logo{
+    max-width: 70px;
+    margin:20px;
+}
+.myleftbody{
+    background-color:#554344;
+    color: #ffffff;
+    font-size: 15px;
+    padding-top: 10px;
+}
+.myleftbody a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.rightbody{
+    margin-bottom: 20px;
+}
+.bcbgcolor{
+    background-color: pink;
+}
+.options{
+
+}
+.textcolor{
+    color: #ffffff;
+}
+.dropdown{
+    float:left;
+}
+.dropdownset{
+    float: right;
+    vertical-align: baseline;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.mymainbody{
+    min-height: 400px;
+}
+.mylogindiv{
+    max-width: 300px;
+    margin:auto;
+}

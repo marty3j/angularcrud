@@ -1,0 +1,17 @@
+<div class="container" style="margin-top:20px;">
+    <div class="row">
+
+    <div *ngFor="let employee of employees" style="max-width: 100px; margin:10px;">
+       <div> 
+      <!-- <span (click)="navigate(employee.id)">{{employee.name}}</span> -->
+      <div class="card" style="text-align: center;">
+
+          <h5 class="card-title">{{employee.name}}</h5>
+          
+          <a href="/viewemployee/{{employee.id}}" class="btn btn-bg">Go</a>
+
+      </div>
+    </div>
+
+    </div>
+</div>
